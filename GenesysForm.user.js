@@ -6,7 +6,6 @@
 // @grant        GM_addStyle
 // @require      https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js
 // @match        https://genesys-internal-chat-dot-fiber-marketing-live.appspot.com/
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=google.com
 // ==/UserScript==
 
 var name = "~NAME HERE"
