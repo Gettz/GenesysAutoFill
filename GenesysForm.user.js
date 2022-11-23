@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Genesys Form Auto-fill
-// @version      0.2
+// @version      0.3
 // @description  Autofill T2 / Dispatch forms on new chat client
 // @author       Tom L
 // @grant        GM_addStyle
