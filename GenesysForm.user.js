@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Genesys Form Auto-fill
-// @version      0.1
+// @version      0.2
 // @description  Autofill T2 / Dispatch forms on new chat client
 // @author       Tom L
 // @grant        GM_addStyle
@@ -9,8 +9,8 @@
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=google.com
 // ==/UserScript==
 
-var name = "Tom L"
-var email = "learyt@google.com"
+var name = "~NAME HERE"
+var email = "~EMAIL HERE~"
 var org = "TNI"
 
 
