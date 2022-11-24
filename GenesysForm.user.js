@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Genesys Form Auto-fill
-// @version      1.2
+// @version      1.3
 // @description  Autofill T2 / Dispatch forms on new chat client
 // @author       Tom L
 // @grant        GM_addStyle
@@ -16,6 +16,7 @@ var fillNode = document.createElement ('div');
 fillNode.innerHTML = '<button id="myButton" type="button"> Set Name</button>';
 fillNode.setAttribute ('id', 'myBContainer');
 document.body.appendChild(fillNode);
+
 
 var myModal = document.createElement ('div');
 myModal.innerHTML = '                                                    \
@@ -41,8 +42,14 @@ function fillForm() {
 }
 
 function saveStorage() {
-    localStorage.setItem('name', document.getElementById('userName').value);
-    localStorage.setItem('email', document.getElementById('userEmail').value);
+    var setName = document.getElementById('userName').value;
+    var setEmail = document.getElementById('userEmail').value;
+    if (setName != '') {
+        localStorage.setItem('name', setName);
+    }
+    if (setEmail != '') {
+        localStorage.setItem('email', setEmail);
+    }
 }
 
 function openModal() {
