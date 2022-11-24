@@ -17,7 +17,6 @@ fillNode.innerHTML = '<button id="myButton" type="button"> Set Name</button>';
 fillNode.setAttribute ('id', 'myBContainer');
 document.body.appendChild(fillNode);
 
-
 var myModal = document.createElement ('div');
 myModal.innerHTML = '                                                    \
 <div id="myModal" class="modal">                                         \
@@ -44,7 +43,6 @@ function fillForm() {
 function saveStorage() {
     localStorage.setItem('name', document.getElementById('userName').value);
     localStorage.setItem('email', document.getElementById('userEmail').value);
-
 }
 
 function openModal() {
