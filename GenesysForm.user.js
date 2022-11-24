@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Genesys Form Auto-fill
-// @version      1.0
+// @version      1.1
 // @description  Autofill T2 / Dispatch forms on new chat client
 // @author       Tom L
 // @grant        GM_addStyle
@@ -77,25 +77,31 @@ function openModal() {
 }
 
 GM_addStyle ( `
-    #myContainer {
-        position:               absolute;
-        top:                    .5%;
-        right:                  .1%;
-        font-size:              14.5px;
-        background:             aliceblue;
-        border:                 1px outset black;
-        margin:                 5px;
-        opacity:                0.9;
-        z-index:                1100;
-        padding:                5px 5px;
-    }
     #myBContainer {
         position:               absolute;
-        top:                    .1%;
-        right:                  5%;
-        font-size:              16px;
-        padding:                5px 5px;
+        width:                  50%;
+        padding:                20px;
+        margin:                 0 auto;
+        top:                    0%;
+        right:                  -100px;
+        font-size:              14px;
         z-index:                1200;
+    }
+    #myButton{
+        display:                inline-block;
+        width:                  114px;
+        height:                 40px;
+        border-radius:          100px;
+        border:                 none;
+        text-decoration:        none;
+        font-weight:            300;
+        color:                  #FFFFFF;
+        background-color:       #0B80EF;
+        text-align:             center;
+        transition:             all 0.2s;
+    }
+    #myButton:hover{
+        background-color:#4095c6;
     }
 
 .modal {
