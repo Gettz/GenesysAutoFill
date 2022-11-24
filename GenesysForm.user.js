@@ -24,11 +24,11 @@ myModal.innerHTML = '                                                    \
 <div id="myModal" class="modal">                                         \
   <div class="modal-content">                                            \
     <span class="close">&times;</span>                                   \
-    <input type="mName" id="userName" placeholder="Name" value="">        \
+    <input type="mName" id="userName" placeholder="Name" value="">       \
     <br><br>                                                             \
     <input type="mEmail" id="userEmail" placeholder="Email" value=""     \
     <br><br><br>                                                         \
-    <button type="button" class="submit" id="OKbutton"> OK </button> \
+    <button type="button" class="submit" id="OKbutton"> OK </button>     \
   </div>                                                                 \
 </div>                                                                   \
 ';
