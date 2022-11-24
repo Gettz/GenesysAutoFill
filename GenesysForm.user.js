@@ -14,7 +14,7 @@ var org = "TNI"
 
 
 var fillNode = document.createElement ('div');
-fillNode.innerHTML = '<button id="myButton" type="button"> Fill out </button>';
+fillNode.innerHTML = '<button id="myButton" type="button"  title="Shift click to set values"> Fill out </button>';
 fillNode.setAttribute ('id', 'myBContainer');
 document.body.appendChild(fillNode);
 
