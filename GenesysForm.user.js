@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Genesys Form Auto-fill
-// @version      1.1
+// @version      1.2
 // @description  Autofill T2 / Dispatch forms on new chat client
 // @author       Tom L
 // @grant        GM_addStyle
@@ -12,9 +12,8 @@
 
 var org = "TNI"
 
-
 var fillNode = document.createElement ('div');
-fillNode.innerHTML = '<button id="myButton" type="button"  title="Shift click to set values"> Fill out </button>';
+fillNode.innerHTML = '<button id="myButton" type="button"> Set Name</button>';
 fillNode.setAttribute ('id', 'myBContainer');
 document.body.appendChild(fillNode);
 
@@ -23,25 +22,16 @@ var myModal = document.createElement ('div');
 myModal.innerHTML = '                                                    \
 <div id="myModal" class="modal">                                         \
   <div class="modal-content">                                            \
-    <span class="close">&times;</span>                                   \
-    <input type="mName" id="userName" placeholder="Name" value="">       \
-    <br><br>                                                             \
-    <input type="mEmail" id="userEmail" placeholder="Email" value=""     \
+    <span class="close">&times;</span><label>Name: </label>              \
+    <input type="mName" id="userName" value="">                          \
+    <br><br><label>Email:  </label>                                      \
+    <input type="mEmail" id="userEmail" value=""                         \
     <br><br><br>                                                         \
     <button type="button" class="submit" id="OKbutton"> OK </button>     \
   </div>                                                                 \
 </div>                                                                   \
 ';
 document.body.appendChild (myModal);
-
-$("#myButton").click(function(event){
-    if(event.shiftKey) {
-       openModal();
-   }
-   else {
-       fillForm();
-   }
-});
 
 function fillForm() {
     document.getElementById("ibexTni-name").value = localStorage.getItem('name')
@@ -76,11 +66,17 @@ function openModal() {
     }
 }
 
+$("#myButton").click(function(event){
+       openModal();
+});
+
+document.getElementById("dispatch").addEventListener("load", fillForm());
+
 GM_addStyle ( `
     #myBContainer {
         position:               absolute;
         width:                  50%;
-        padding:                20px;
+        padding:                15px;
         margin:                 0 auto;
         top:                    0%;
         right:                  -100px;
@@ -101,44 +97,43 @@ GM_addStyle ( `
         transition:             all 0.2s;
     }
     #myButton:hover{
-        background-color:#4095c6;
+        background-color:       #4095c6;
     }
 
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 9999; /* Sit on top */
-  padding-top: 50px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        display:                none; /* Hidden by default */
+        position:               fixed; /* Stay in place */
+        z-index:                9999;   /* Sit on top */
+        padding-top:            50px; /* Location of the box */
+        left:                   0;
+        top:                    0;
+        width:                  100%; /* Full width */
+        height:                 100%; /* Full height */
+        overflow:               auto; /* Enable scroll if needed */
+        background-color:       rgb(0,0,0); /* Fallback color */
+        background-color:       rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-/* Modal Content */
 .modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 500px;
+        background-color:       #fefefe;
+        margin:                 auto;
+        padding:                20px;
+        border:                 1px solid #888;
+        border-radius:          5px;
+        width:                  400px;
 }
 
-/* The Close Button */
 .close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+        color:                  #aaaaaa;
+        float:                  right;
+        font-size:              28px;
+        font-weight:            bold;
 }
 
 .close:hover,
 .close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+        color:                  #000;
+        text-decoration:        none;
+        cursor:                 pointer;
 }
 ` );
