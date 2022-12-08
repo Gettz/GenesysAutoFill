@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Genesys Form Auto-fill
-// @version      1.3
+// @version      1.4
 // @description  Autofill T2 / Dispatch forms on new chat client
 // @author       Tom L
 // @grant        GM_addStyle
@@ -82,8 +82,8 @@ GM_addStyle ( `
         width:                  50%;
         padding:                15px;
         margin:                 0 auto;
-        top:                    0%;
-        right:                  -100px;
+        top:                    22px;
+        right:                  -20px;
         font-size:              14px;
         z-index:                1200;
     }
