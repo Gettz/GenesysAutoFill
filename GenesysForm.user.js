@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Genesys Form Auto-fill
-// @version      1.5
+// @version      1.6
 // @description  Autofill T2 / Dispatch forms on new chat client
 // @author       Tom L
 // @grant        GM_addStyle
@@ -38,6 +38,8 @@ function fillForm() {
     document.getElementById("ibexTni-vendor").value = org
     document.getElementById("dispatch-name").value = localStorage.getItem('name')
     document.getElementById("dispatch-email").value = localStorage.getItem('email')
+    document.getElementById("csNocCC-name").value = localStorage.getItem('name')
+    document.getElementById("csNocCC-email").value = localStorage.getItem('email')
 }
 
 function saveStorage() {
